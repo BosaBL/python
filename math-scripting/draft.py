@@ -22,7 +22,7 @@ v = ((80*9.8)/(10))*(1-np.exp((-10/80)*t))  # Función
 x = sym.Symbol('x')
 # Redefiniendo la función para evaluar con sympy
 v_2 = ((80*9.8)/(10))*(1-sym.exp((-10/80)*x))
-lim_infty = sym.limit(v_2, x, sym.oo)
+lim_infty = sym.limit(v_2, x, sym.oo).n()
 # Evaluando $\lim_{t\to\infty}$
 plt.axhline(y=lim_infty, color='b', linestyle='dashed')
 # Velocidad Terminal
